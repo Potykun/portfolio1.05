@@ -1,0 +1,13 @@
+@import "./../../style";
+* {
+	background-color: $primary-background;
+}
+.main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 940px;
+	color: $accent;
+	height: 100px;
+	font-size: 16px;
+}
