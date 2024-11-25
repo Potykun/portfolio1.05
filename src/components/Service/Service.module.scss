@@ -1,0 +1,38 @@
+@import "./../../style";
+.servicesContainer {
+	display: grid;
+	margin-top: 100px;
+	justify-content: center;
+	align-items: center;
+	max-width: 750px;
+	& ul {
+		display: grid;
+		& li {
+			padding: 10px;
+			display: grid;
+
+			& > div {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				justify-content: space-between;
+				align-items: center;
+				& :nth-child(2n) {
+					justify-self: end;
+				}
+			}
+			& h1 {
+				font-size: 50px;
+				text-transform: uppercase;
+				letter-spacing: -2px;
+			}
+		}
+	}
+}
+
+.svg {
+	> svg {
+		fill: $accent;
+		height: 50px;
+		width: 50px;
+	}
+}

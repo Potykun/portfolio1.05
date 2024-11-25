@@ -1,15 +1,46 @@
 import { FC } from "react"
-import styles from "./Menu.module.scss"
+import { NavLink } from "react-router"
+import styles from "./../Header.module.scss"
 
 const Menu: FC = () => {
 	return (
 		<nav className={styles.menu}>
-			<a>Home</a>
-			<a>Service</a>
-			<a>About</a>
-			<a>Experience</a>
-			<a>Skills</a>
-			<a>Contact</a>
+			<NavLink
+				to="/"
+				end
+			>
+				Home
+			</NavLink>
+			<NavLink
+				to="/service"
+				end
+			>
+				Service
+			</NavLink>
+			<NavLink
+				to="/about"
+				end
+			>
+				About
+			</NavLink>
+			<NavLink
+				to="/Experience"
+				end
+			>
+				Experience
+			</NavLink>
+			<NavLink
+				to="/skills"
+				end
+			>
+				Skills
+			</NavLink>
+			<NavLink
+				to="/contacts"
+				end
+			>
+				Contacts
+			</NavLink>
 		</nav>
 	)
 }

@@ -4,9 +4,11 @@ import Menu from "./Menu/Menu"
 
 const Header: FC = () => {
 	return (
-		<header className={styles.main}>
-			<div>A. P.</div>
-			<Menu></Menu>
+		<header className={styles.headerContainer}>
+			<div className={styles.innerContainer}>
+				<div>A. P.</div>
+				<Menu></Menu>
+			</div>
 		</header>
 	)
 }
