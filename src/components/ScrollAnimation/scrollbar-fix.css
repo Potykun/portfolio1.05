@@ -1,0 +1,30 @@
+/* Scrollbar Fix - Ensures only one main scrollbar */
+
+/* Hide horizontal scrollbars everywhere */
+* {
+	overflow-x: hidden;
+}
+
+/* Ensure only body has vertical scrollbar */
+html {
+	overflow-y: hidden;
+}
+
+body {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* Prevent any nested scrolling containers */
+#root,
+.mainSection,
+.scrollAnimation {
+	overflow: visible;
+}
+
+/* Ensure proper scrolling behavior */
+html,
+body {
+	height: auto;
+	min-height: 100vh;
+}

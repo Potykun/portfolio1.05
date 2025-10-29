@@ -1,0 +1,119 @@
+@import "./../../../style";
+.mainContent {
+	position: relative;
+
+	height: 100%;
+	padding: 0 16px;
+
+	& p {
+		padding-top: 25px;
+		text-wrap-mode: wrap;
+		text-shadow: -1px -1px 0px $primary-background, -1px -1px 2px $primary-background;
+	}
+	@media (max-width: 900px) {
+		display: grid;
+		width: 100%;
+	}
+	@media (max-width: 425px) {
+		justify-items: center;
+		padding: 0 8px;
+		margin-top: 0px;
+		& p {
+			padding-top: 16px;
+		}
+	}
+}
+.header {
+	padding-top: 250px;
+	color: rgba($accent, $alpha: 1);
+	font-size: 100px;
+	font-weight: bold;
+	letter-spacing: -2px;
+	text-shadow: -1px -1px 5px $primary-background, -2px -2px 5px $primary-background;
+
+	@media (max-width: 900px) {
+		font-size: 72px;
+	}
+	@media (max-width: 425px) {
+		padding-top: 0;
+		justify-self: start;
+		font-size: 64px;
+	}
+}
+.image {
+	position: absolute;
+	top: 5%;
+	right: 12%;
+	z-index: -1;
+	max-width: 70%;
+	object-fit: cover;
+	@media (max-width: 900px) {
+		right: 0;
+	}
+	@media (max-width: 425px) {
+		position: relative;
+	}
+}
+.fillSvg {
+	fill: $white;
+	width: 30px;
+	height: 30px;
+
+	transition: all 0.3s ease 0s;
+	&:hover {
+		transform: scale(1.5);
+		fill: $accent;
+	}
+}
+.contacts {
+	margin: 50px 0;
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto auto auto;
+	justify-content: space-between;
+	gap: 10px;
+	width: 100%;
+	@media (max-width: 425px) {
+		margin: 10px 0;
+	}
+	& > div {
+		padding-left: 20px;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: calc(50% - 5px);
+			left: 0;
+			display: flex;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			background-color: green;
+			animation: sparkle 1s ease-in infinite;
+		}
+	}
+
+	& span {
+		background-color: $accent;
+		height: 40px;
+		width: 1px;
+	}
+	& ul {
+		display: flex;
+		gap: 5px;
+	}
+}
+@keyframes sparkle {
+	0% {
+		transform: scale(0.5);
+		opacity: 10%;
+	}
+	50% {
+		transform: scale(1);
+		opacity: 100%;
+	}
+	100% {
+		transform: scale(0.5);
+		opacity: 10%;
+	}
+}

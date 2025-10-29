@@ -1,0 +1,9 @@
+@import "./../../../style";
+.mainSection {
+	position: relative;
+	height: fit-content;
+	display: grid;
+	width: 100%;
+	max-width: 1200px;
+	min-height: 100vh;
+}

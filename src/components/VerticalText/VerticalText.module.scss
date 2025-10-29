@@ -1,0 +1,55 @@
+@import "./../../style";
+
+.verticalText {
+	color: rgba(200, 180, 235, 0.83);
+	writing-mode: vertical-rl;
+	position: absolute;
+	left: -10%;
+	top: -10%;
+	font-size: 250px;
+	min-height: 100%;
+	font-weight: 700;
+	transform: translateX(0%) rotate(0deg);
+	text-transform: uppercase;
+	opacity: 0.3;
+	z-index: -1;
+	white-space: nowrap;
+	user-select: none;
+	pointer-events: none;
+	display: none;
+
+	// Ensure the text doesn't interfere with main content
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	// Responsive adjustments
+	@media (max-width: 750px) {
+		position: relative;
+		top: 0;
+		left: 0;
+		writing-mode: horizontal-tb;
+		font-size: 92px;
+	}
+
+	// @media (max-width: 768px) {
+	// 	font-size: clamp(40px, 5vw, 60px);
+	// 	left: -10px;
+	// }
+
+	// @media (max-width: 480px) {
+	// 	font-size: clamp(30px, 4vw, 45px);
+	// 	left: -20px;
+	// }
+
+	// // Hide on very small screens to avoid layout issues
+	// @media (max-width: 320px) {
+	// 	display: none;
+	// }
+}
