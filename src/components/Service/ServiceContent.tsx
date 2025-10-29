@@ -58,7 +58,7 @@ const ContentItems: ContentItemsTypes[] = [
 ]
 
 const ServiceContent: FC = () => {
-	const [items, setItems] = useState<ContentItemsTypes[]>(ContentItems)
+	const [items] = useState<ContentItemsTypes[]>(ContentItems)
 	const [activeItem, setActiveItem] = useState<string | null>(null)
 
 	const handleItemClick = (itemId: string) => {
