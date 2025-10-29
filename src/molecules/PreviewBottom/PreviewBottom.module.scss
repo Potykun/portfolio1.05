@@ -1,0 +1,65 @@
+@import "../../style.scss";
+
+.fillSvg {
+	fill: $white;
+	width: 30px;
+	height: 30px;
+
+	transition: all 0.3s ease 0s;
+	&:hover {
+		transform: scale(1.5);
+		fill: $accent;
+	}
+}
+.contacts {
+	margin: 50px 0;
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto auto auto;
+	justify-content: space-between;
+	gap: 10px;
+	width: 100%;
+	@media (max-width: 425px) {
+		margin: 10px 0;
+	}
+	& > div {
+		padding-left: 20px;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: calc(50% - 5px);
+			left: 0;
+			display: flex;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			background-color: green;
+			animation: sparkle 1s ease-in infinite;
+		}
+	}
+
+	& span {
+		background-color: $accent;
+		height: 40px;
+		width: 1px;
+	}
+	& ul {
+		display: flex;
+		gap: 5px;
+	}
+}
+@keyframes sparkle {
+	0% {
+		transform: scale(0.5);
+		opacity: 10%;
+	}
+	50% {
+		transform: scale(1);
+		opacity: 100%;
+	}
+	100% {
+		transform: scale(0.5);
+		opacity: 10%;
+	}
+}

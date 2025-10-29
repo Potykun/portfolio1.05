@@ -1,0 +1,56 @@
+@import "../../style.scss";
+.mainContent {
+	position: relative;
+
+	height: 100%;
+	padding: 0 16px;
+
+	& p {
+		padding-top: 25px;
+		text-wrap-mode: wrap;
+		text-shadow: -1px -1px 0px $primary-background, -1px -1px 2px $primary-background;
+	}
+	@media (max-width: 900px) {
+		display: grid;
+		width: 100%;
+	}
+	@media (max-width: 425px) {
+		justify-items: center;
+		padding: 0 8px;
+		margin-top: 0px;
+		& p {
+			padding-top: 16px;
+		}
+	}
+}
+.header {
+	padding-top: 250px;
+	color: rgba($accent, $alpha: 1);
+	font-size: 100px;
+	font-weight: bold;
+	letter-spacing: -2px;
+	text-shadow: -1px -1px 5px $primary-background, -2px -2px 5px $primary-background;
+
+	@media (max-width: 900px) {
+		font-size: 72px;
+	}
+	@media (max-width: 425px) {
+		padding-top: 0;
+		justify-self: start;
+		font-size: 64px;
+	}
+}
+.image {
+	position: absolute;
+	top: 5%;
+	right: 12%;
+	z-index: -1;
+	max-width: 70%;
+	object-fit: cover;
+	@media (max-width: 900px) {
+		right: 0;
+	}
+	@media (max-width: 425px) {
+		position: relative;
+	}
+}

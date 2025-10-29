@@ -1,0 +1,23 @@
+@import "../../style.scss";
+
+.headerContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-height: 100px;
+	width: 100%;
+	display: flex;
+	justify-self: center;
+	justify-content: space-around;
+	align-items: center;
+	color: $accent;
+	font-size: 16px;
+	z-index: 5;
+	background-color: rgba($primary-background, 0.3);
+	& .innerContainer {
+		padding: 0 30px;
+		display: flex;
+		flex: 0 1 1200px;
+		justify-content: space-between;
+	}
+}
