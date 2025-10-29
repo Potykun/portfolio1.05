@@ -1,0 +1,34 @@
+/* Force single scrollbar - Add this to your main CSS file */
+
+/* Reset all overflow properties */
+* {
+	overflow-x: hidden !important;
+}
+
+/* Ensure only html has the main scrollbar */
+html {
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	height: 100% !important;
+}
+
+body {
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	height: 100% !important;
+}
+
+/* Prevent any nested scrolling */
+#root,
+main,
+.bodyMain,
+.mainSection {
+	overflow: visible !important;
+}
+
+/* Ensure proper height calculation */
+html,
+body {
+	height: auto;
+	min-height: 100vh;
+}

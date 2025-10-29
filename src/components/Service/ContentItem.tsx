@@ -2,17 +2,38 @@ import { FC } from "react"
 import styles from "./Service.module.scss"
 import { ContentItemsTypes } from "./ServiceContent"
 
-const ContentItem: FC<ContentItemsTypes> = ({ name, id, iconUrl }) => {
+interface ContentItemProps extends ContentItemsTypes {
+	isActive: boolean
+	onClick: () => void
+}
+
+const ContentItem: FC<ContentItemProps> = ({
+	name,
+	id,
+	iconUrl,
+	iconUrlOpen,
+	description,
+	isActive,
+	onClick,
+}) => {
 	return (
-		<li className={styles.itemContainer}>
+		<li
+			className={`${styles.itemContainer} ${isActive ? styles.active : ""}`}
+			onClick={onClick}
+		>
 			<div>
-				<p>{id}</p>
+				<p className={styles.number}>{id}</p>
 				<div
 					className={styles.svg}
-					dangerouslySetInnerHTML={{ __html: iconUrl }}
+					dangerouslySetInnerHTML={{
+						__html: isActive ? iconUrlOpen : iconUrl,
+					}}
 				></div>
 			</div>
 			<h1>{name}</h1>
+			<div className={`${styles.descriptionContainer} ${isActive ? styles.show : ""}`}>
+				<p className={styles.description}>{description}</p>
+			</div>
 		</li>
 	)
 }

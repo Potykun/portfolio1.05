@@ -1,14 +1,14 @@
 import { FC } from "react"
-import Header from "../Header/Header"
-import ServiceContent from "./ServiceContent"
+import VerticalText from "../VerticalText/VerticalText"
 import styles from "./Service.module.scss"
+import ServiceContent from "./ServiceContent"
 
 const Service: FC = () => {
 	return (
-		<div className={styles.servicesContainer}>
-			<Header></Header>
+		<section className={styles.servicesContainer}>
+			<VerticalText text="Services" />
 			<ServiceContent></ServiceContent>
-		</div>
+		</section>
 	)
 }
 export default Service

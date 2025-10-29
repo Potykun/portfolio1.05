@@ -2,8 +2,19 @@
 .quatre {
 	background-color: $accent;
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	height: var(--dynamic-size);
+	width: var(--dynamic-size);
+	top: var(--dynamic-top);
+	left: var(--dynamic-left);
+	top: var(--dynamic-top);
+	@media (max-width: 900px) {
+		height: calc(var(--dynamic-size) * 0.75);
+		width: calc(var(--dynamic-size) * 0.75);
+		top: calc(var(--dynamic-top) * 1);
+	}
+	@media (max-width: 425px) {
+		top: calc(var(--dynamic-top) * 0.85);
+	}
 }
 @keyframes moveHorizontal {
 	0% {
@@ -29,9 +40,9 @@
 	}
 }
 .horizontal {
-	animation: moveHorizontal 5s linear infinite;
+	animation: moveHorizontal var(--animation-speed, 5s) linear infinite;
 }
 
 .vertical {
-	animation: moveVertical 5s linear infinite;
+	animation: moveVertical var(--animation-speed, 5s) linear infinite;
 }
